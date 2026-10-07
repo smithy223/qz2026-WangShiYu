@@ -207,18 +207,22 @@ logs = [
 3. 解释为什么第 2 问不能直接用 `len(logs)` 得到结果，需要什么遍历结构？
 
 （在此作答）
-1.lst=[a for a in logs if a["level"]=="ERROR"]
+1
+```python
+lst=[a for a in logs if a["level"]=="ERROR"]
 print(lst)
-
-2.def count(name):
+```
+2
+```python
+def count(name):
     s=0
     for n in logs:
-        if n["user"]==name:
+        if n["user"]==name:    
             s+=1
     return s
 new={"张三":count("张三"),"李四":count("李四"),"王五":count("王五")}
 print(new)
-
+```
 3.len（）得到的是列表元素个数，得不到每个名字的个数。需要for的遍历结构
 
 ### 第 3 题：异常处理设计
@@ -235,7 +239,8 @@ Day_10 中你写过 `safe_int(s)` 函数：能转就返回整数，不能转就�
 请写出函数代码，并说明：为什么这里用 `try/except` 比先用 `if` 判断再计算更好？
 
 （在此作答）
-def safe_divide(a,b):   
+```python
+def safe_divide(a,b):
     try:
         a=int(input("输入:\n"))
         b=int(input("输入:\n"))
@@ -249,5 +254,5 @@ def safe_divide(a,b):
 c=None
 d=None
 print(safe_divide(c,d))
-用if时需要判断a,b能否被转整数，判断条件很麻烦，try把错误归好类别，简洁
-
+```
+用if要判断能否转整数，条件太复杂，try把错误总结好了，有什么错就能报错
